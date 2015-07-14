@@ -1,0 +1,422 @@
+
+<!-- MAIN BAR -->
+<section class="fpd-main-bar fpd-clearfix fpd-primary-bg-color">
+
+  <!-- Left -->
+  <div class="fpd-left">
+    <div class="fpd-btn fpd-primary-text-color" data-context="layers">
+      <i class="fpd-icon-layers"></i><span>{{layersButton}}</span>
+    </div>
+    <div class="fpd-btn fpd-primary-text-color" data-context="adds">
+      <i class="fpd-icon-add"></i><span>{{addsButton}}</span>
+    </div>
+    <div class="fpd-btn fpd-primary-text-color" data-context="products">
+      <i class="fpd-icon-product"></i><span>{{productsButton}}</span>
+    </div>
+  </div>
+
+  <!-- Right -->
+  <div class="fpd-right">
+    <div class="fpd-more fpd-btn fpd-dropdown" >
+      <i class="fpd-icon-more fpd-tooltip fpd-primary-text-color" title="{{moreButton}}"></i>
+      <div class="fpd-dropdown-menu fpd-shadow-1  fpd-scale-tr">
+        <span class="fpd-download-image fpd-btn">{{downloadImage}}</span>
+        <span class="fpd-save-pdf fpd-btn">{{downloadPDF}}</span>
+        <span class="fpd-print fpd-btn">{{print}}</span>
+        <span class="fpd-save-product fpd-btn">{{saveProduct}}</span>
+        <span class="fpd-load-saved-products fpd-btn">{{loadProduct}}</span>
+      </div>
+      <a href="" download="" target="_blank" class="fpd-download-anchor" style="display: none;"></a> <!-- Hidden anchor -->
+    </div>
+
+  </div>
+</section>
+
+<!-- SUB-BAR -->
+<section class="fpd-sub-bar fpd-clearfix">
+
+  <!-- Left -->
+  <div class="fpd-left">
+    <div class="fpd-undo fpd-btn fpd-disabled fpd-tooltip" title="undoButton">
+      <i class="fpd-icon-undo"></i>
+    </div>
+    <div class="fpd-redo fpd-btn fpd-disabled fpd-tooltip" title="redoButton">
+      <i class="fpd-icon-redo"></i>
+    </div>
+    <div class="fpd-reset-product fpd-btn fpd-tooltip" title="{{resetProductButton}}">
+      <i class="fpd-icon-reset"></i>
+    </div>
+  </div>
+
+  <!-- Right -->
+  <div class="fpd-right">
+    <div class="fpd-zoom fpd-option-group">
+      <div class="fpd-btn fpd-tooltip" title="zoomButton">
+        <i class="fpd-icon-zoom-in"></i>
+      </div>
+      <div class="fpd-option-content">
+        <div data-value="1" data-min="1" data-max="3" data-step="0.02" class="fpd-set-zoom fpd-slider"></div>
+        <div class="fpd-stage-pan fpd-btn fpd-tooltip" title="panButton">
+          <i class="fpd-icon-drag"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- MAIN CONTAINER -->
+<section class="fpd-main-container">
+
+  <!-- Product Stage -->
+  <div class="fpd-product-stage">
+    <canvas></canvas>
+    <div class="fpd-element-tooltip"></div>
+  </div>
+
+  <!-- Context Dialog -->
+  <div class="fpd-context-dialog fpd-shadow-2 fpd-columns-3" data-columns="3">
+    <nav class="fpd-dialog-head fpd-clearfix fpd-primary-bg-color fpd-primary-text-color">
+      <div class="fpd-left fpd-dialog-drag-handle">
+        <div><i class="fpd-icon-drag"></i><span class="fpd-dialog-title"></span></div>
+      </div>
+      <div class="fpd-right">
+        <div class="fpd-content-back fpd-btn">
+          <i class="fpd-icon-back"></i>
+        </div>
+        <div class="fpd-close-dialog fpd-btn">
+          <i class="fpd-icon-close"></i>
+        </div>
+      </div>
+    </nav>
+    <div class="fpd-dialog-content">
+
+      <!-- Manage Layers -->
+      <div class="fpd-content-layers">
+        <div class="fpd-list"></div>
+      </div>
+
+      <!-- Edit Element -->
+      <div class="fpd-content-edit">
+        <div class="fpd-list">
+
+          <!-- Fill Options -->
+          <div class="fpd-fill-options fpd-head-options fpd-list-row">
+            <div class="fpd-cell-full">
+              <label>{{fillOptions}}</label>
+            </div>
+          </div>
+          <div class="fpd-fill-options fpd-sub-option fpd-list-row fpd-color-option">
+            <div class="fpd-cell-0">
+              <label>{{color}}</label>
+            </div>
+            <div class="fpd-cell-1">
+              <div class="fpd-color-picker">
+                <input type="text" value="">
+              </div>
+            </div>
+          </div>
+          <div class="fpd-fill-options fpd-sub-option fpd-list-row fpd-patterns-option">
+            <div class="fpd-cell-0">
+              <label>{{patterns}}</label>
+            </div>
+            <div class="fpd-cell-1">
+              <div class="fpd-patterns">
+                <div class="fpd-grid fpd-grid-contain"></div>
+              </div>
+            </div>
+          </div>
+          <div class="fpd-fill-options fpd-sub-option fpd-list-row fpd-opacity-option">
+            <div class="fpd-cell-0">
+              <label>{{opacity}}</label>
+            </div>
+            <div class="fpd-cell-1">
+              <div>
+                <div data-value="0.5" data-min="0" data-max="1" data-step="0.01" class="fpd-opacity-slider fpd-slider"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter Options -->
+          <div class="fpd-filter-options fpd-head-options fpd-list-row">
+            <div class="fpd-cell-0">
+              <label>{{filter}}</label>
+            </div>
+            <div class="fpd-cell-1">
+              <div class="fpd-grid fpd-grid-cover">
+                <div class="fpd-filter-no fpd-item" data-filter="no"><picture></picture></div>
+                <div class="fpd-filter-grayscale fpd-item" data-filter="grayscale"><picture></picture></div>
+                <div class="fpd-filter-sepia fpd-item" data-filter="sepia"><picture></picture></div>
+                <div class="fpd-filter-sepia2 fpd-item" data-filter="sepia2"><picture></picture></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Text Options -->
+          <div class="fpd-text-options fpd-head-options fpd-list-row">
+            <div class="fpd-cell-full">
+              <label>{{textOptions}}</label>
+            </div>
+          </div>
+          <div class="fpd-text-options fpd-sub-option fpd-list-row fpd-text-option">
+            <div class="fpd-cell-0">
+              <label>{{changeText}}</label>
+            </div>
+            <div class="fpd-cell-1">
+              <textarea class="fpd-change-text fpd-border-color"></textarea>
+            </div>
+          </div>
+          <div class="fpd-text-options fpd-sub-option fpd-list-row fpd-typeface-option">
+            <div class="fpd-cell-0">
+              <label>{{typeface}}</label>
+            </div>
+            <div class="fpd-cell-1">
+              <div>
+                <select class="fpd-fonts-dropdown"></select>
+              </div>
+            </div>
+          </div>
+          <div class="fpd-text-options fpd-sub-option fpd-list-row fpd-lineHeight-option">
+            <div class="fpd-cell-0">
+              <label>{{lineHeight}}</label>
+            </div>
+            <div class="fpd-cell-1">
+              <div>
+                <div data-value="1" data-min="0.1" data-max="10" data-step="0.1" class="fpd-line-height-slider fpd-slider"></div>
+              </div>
+            </div>
+          </div>
+          <div class="fpd-text-options fpd-sub-option fpd-list-row fpd-textAlignment-option">
+            <div class="fpd-cell-0">
+              <label>{{textAlign}}</label>
+            </div>
+            <div class="fpd-cell-1">
+              <div class="fpd-set-alignment">
+                <span title="{{textAlignLeft}}" class="fpd-text-align-left fpd-btn fpd-tooltip"><i class=" fpd-icon-format-align-left"></i></span>
+                <span title="{{textAlignCenter}}" class="fpd-text-align-center fpd-btn fpd-tooltip"><i class=" fpd-icon-format-align-center"></i></span>
+                <span title="{{textAlignRight}}" class="fpd-text-align-right fpd-btn fpd-tooltip"><i class=" fpd-icon-format-align-right"></i></span>
+              </div>
+
+            </div>
+          </div>
+          <div class="fpd-text-options fpd-sub-option fpd-list-row fpd-textStyle-option">
+            <div class="fpd-cell-0">
+              <label>{{textStyling}}</label>
+            </div>
+            <div class="fpd-cell-1">
+              <div class="fpd-set-style">
+                <span title="{{bold}}" class="fpd-text-style-bold fpd-btn fpd-tooltip"><i class=" fpd-icon-format-bold"></i></span>
+                <span title="{{italic}}" class="fpd-text-style-italic fpd-btn fpd-tooltip"><i class=" fpd-icon-format-italic"></i></span>
+                <span title="{{underline}}" class="fpd-text-style-underline fpd-btn fpd-tooltip"><i class=" fpd-icon-format-underline"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Curved Text Options -->
+          <div class="fpd-text-options fpd-curved-text-options fpd-sub-option fpd-list-row">
+            <div class="fpd-cell-0">
+              <label{{curvedText}}</label>
+            </div>
+            <div class="fpd-cell-1">
+              <div>
+                <div class="fpd-curved-text-switcher fpd-switch-container">
+                  <div class="fpd-switch-bar"></div>
+                  <div class="fpd-switch-toggle"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fpd-text-options fpd-curved-text-options fpd-sub-option fpd-sub-2 fpd-list-row">
+            <div class="fpd-cell-0">
+              <label>{{curvedTextRadius}}</label>
+            </div>
+            <div class="fpd-cell-1">
+              <div>
+                <div data-value="100" data-min="0" data-max="200" data-step="1" class="fpd-curved-text-radius-slider fpd-slider"></div>
+              </div>
+            </div>
+          </div>
+          <div class="fpd-text-options fpd-curved-text-options fpd-sub-option fpd-sub-2 fpd-list-row">
+            <div class="fpd-cell-0">
+              <label>{{curvedTextSpacing}}</label>
+            </div>
+            <div class="fpd-cell-1">
+              <div>
+                <div data-value="50" data-min="0" data-max="100" data-step="1" class="fpd-curved-text-spacing-slider fpd-slider"></div>
+              </div>
+            </div>
+          </div>
+          <div class="fpd-text-options fpd-curved-text-options fpd-sub-option fpd-sub-2 fpd-list-row">
+            <div class="fpd-cell-0">
+              <label>{{curvedTextReverse}}</label>
+            </div>
+            <div class="fpd-cell-1">
+              <div>
+                <div class="fpd-curved-text-reverse-switcher fpd-switch-container">
+                  <div class="fpd-switch-bar"></div>
+                  <div class="fpd-switch-toggle"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Transform Options -->
+          <div class="fpd-transform-options fpd-head-options fpd-list-row">
+            <div class="fpd-cell-full">
+              <label>{{transform}}</label>
+            </div>
+          </div>
+          <div class="fpd-transform-options fpd-list-row fpd-sub-option fpd-angle-option">
+            <div class="fpd-cell-0">
+              <label>{{angle}}</label>
+            </div>
+            <div class="fpd-cell-1">
+              <div>
+                <div data-value="0" data-min="0" data-max="359" data-step="1" class="fpd-angle-slider fpd-slider"></div>
+              </div>
+            </div>
+          </div>
+          <div class="fpd-transform-options fpd-list-row fpd-sub-option fpd-scale-option">
+            <div class="fpd-cell-0">
+              <label>{{scale}}</label>
+            </div>
+            <div class="fpd-cell-1">
+              <div>
+                <div data-value="1" data-min="0" data-max="20" data-step="0.1" class="fpd-scale-slider fpd-slider"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Helper Buttons -->
+          <div class="fpd-helper-btns fpd-list-row">
+            <div class="fpd-cell-full">
+              <div>
+								<span class="fpd-moveLayer-options">
+									<span title="{{moveUp}}" class="fpd-move-up fpd-btn fpd-tooltip">
+										<i class="fpd-icon-move-up"></i>
+									</span>
+									<span title="{{moveDown}}" class="fpd-move-down fpd-btn fpd-tooltip">
+										<i class="fpd-icon-move-down"></i>
+									</span>
+								</span>
+								<span class="fpd-alignment-options">
+									<span title="{{centerH}}" class="fpd-center-horizontal fpd-btn fpd-tooltip">
+										<i class="fpd-icon-align-horizontal"></i>
+									</span>
+									<span title="{{centerV}}" class="fpd-center-vertical fpd-btn fpd-tooltip">
+										<i class="fpd-icon-align-vertical"></i>
+									</span>
+								</span>
+								<span class="fpd-flip-options">
+									<span title="{{flipHorizontal}}" class="fpd-flip-horizontal fpd-btn fpd-tooltip">
+										<i class="fpd-icon-flip-horizontal"></i>
+									</span>
+									<span title="{{flipVertical}}" class="fpd-flip-vertical fpd-btn fpd-tooltip">
+										<i class="fpd-icon-flip-vertical "></i>
+									</span>
+								</span>
+								<span title="{{resetElement}}" class="fpd-reset-element fpd-btn fpd-tooltip">
+									<i class="fpd-icon-reset"></i>
+								</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Add Something -->
+      <div class="fpd-content-adds">
+
+        <!-- Choose add option -->
+        <div class="fpd-choose-add">
+          <div class="fpd-add-image fpd-btn-raised fpd-secondary-bg-color fpd-secondary-text-color">
+            <i class="fpd-icon-file-upload"></i><span>{{addImageButton}}</span>
+          </div>
+          <div class="fpd-add-text fpd-btn-raised fpd-secondary-bg-color fpd-secondary-text-color">
+            <i class="fpd-icon-text-format"></i><span>{{addTextButton}}</span>
+            <div class="fpd-input-text fpd-clearfix fpd-trans">
+              <input type="text" placeholder="{{centerText}}" />
+              <span class="fpd-btn"><i class="fpd-icon-done"></i></span>
+            </div>
+          </div>
+          <div class="fpd-add-facebook-photo fpd-btn-raised fpd-secondary-bg-color fpd-secondary-text-color">
+            <i class="fpd-icon-facebook"></i><span>{{addFBButton}}</span>
+          </div>
+          <div class="fpd-add-instagram-photo fpd-btn-raised fpd-secondary-bg-color fpd-secondary-text-color">
+            <i class="fpd-icon-instagram"></i><span>{{addInstaButton}}</span>
+          </div>
+          <div class="fpd-add-design fpd-btn-raised fpd-secondary-bg-color fpd-secondary-text-color">
+            <i class="fpd-icon-design-library"></i><span>{{addDesignButton}}</span>
+          </div>
+          <form class="fpd-upload-form" style="display: block;">
+            <input type="file" class="fpd-input-image" name="uploaded_file" style="position:absolute;left:-9999999px;visibility:hidden;"  />
+          </form>
+
+          <!-- Facebook Wrapper -->
+          <div class="fpd-add-facebook-photo-wrapper fpd-content-sub" data-subContext="facebook">
+            <div class="fpd-content-head fpd-clearfix">
+              <fb:login-button data-max-rows="1" data-show-faces="false" data-scope="user_photos" autologoutlink="true"></fb:login-button>
+              <select class="fpd-fb-user-albums" data-placeholder="{{fbSelectAlbum}}">
+              </select>
+            </div>
+            <div class="fpd-content-main">
+              <div class="fpd-grid fpd-grid-cover fpd-photo-grid fpd-dynamic-columns"></div>
+            </div>
+          </div>
+
+          <!-- Instagram Wrapper -->
+          <div class="fpd-add-instagram-photo-wrapper fpd-content-sub" data-subContext="instagram">
+            <div class="fpd-tabs fpd-primary-bg-color fpd-primary-text-color">
+              <span class="fpd-insta-feed fpd-btn">{{instaFeedButton}}</span>
+              <span class="fpd-insta-recent-images fpd-btn">{{instaRecentImagesButton}}</span>
+            </div>
+            <div class="fpd-content-main">
+              <div class="fpd-grid fpd-grid-cover fpd-photo-grid fpd-dynamic-columns"></div>
+
+            </div>
+						<span class="fpd-insta-load-next fpd-btn fpd-disabled">
+								<i class="fpd-icon-more-horizontal"></i>
+							</span>
+
+          </div>
+
+          <!-- Designs Wrapper -->
+          <div class="fpd-add-design-wrapper fpd-content-sub" data-subContext="designs">
+            <div class="fpd-content-head"></div>
+            <div class="fpd-content-main">
+              <div class="fpd-grid fpd-grid-contain fpd-padding fpd-dynamic-columns"></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Products -->
+      <div class="fpd-content-products">
+        <div class="fpd-content-head"></div>
+        <div class="fpd-content-main">
+          <div class="fpd-grid fpd-grid-contain fpd-padding fpd-dynamic-columns"></div>
+        </div>
+      </div>
+
+      <!-- Saved Products -->
+      <div class="fpd-content-saved-products">
+        <div class="fpd-grid fpd-grid-contain fpd-padding fpd-dynamic-columns"></div>
+      </div>
+
+      <!-- Loader -->
+      <div class="fpd-context-loader">
+        <div class="fpd-loading"></div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Full Loader -->
+<div class="fpd-full-loader">
+  <div class="fpd-loading"></div>
+</div>

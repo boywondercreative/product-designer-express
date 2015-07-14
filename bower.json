@@ -1,0 +1,22 @@
+{
+  "name": "product-designer-express",
+  "version": "0.0.0",
+  "homepage": "https://github.com/christiansakai/fancy_product_designer",
+  "authors": [
+    "Christian Sakai <christianmsakai@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "3.0.0",
+    "jquery": "1.9.1",
+    "fabric": "1.4.13",
+    "jquery-ui": "1.11.2"
+  }
+}
