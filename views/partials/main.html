@@ -5,10 +5,12 @@
 
   <div id="clothing-designer" class="fpd-shadow-1">
 
+    <!-- Shirt -->
     <div class="fpd-product"
          title="Shirt Front"
          data-thumbnail="/images/yellow_shirt/front/preview.png">
 
+      <!-- Main -->
       <img src="/images/yellow_shirt/front/base.png"
            title="Base"
            data-parameters='{"x": 325, "y": 329, "colors": "#d59211", "price": 20}' />
@@ -19,11 +21,16 @@
            title="Hightlights"
            data-parameters='{"x": 322, "y": 137}' />
 
-        <span title="Any Text"
-              data-parameters='{"boundingBox": "Base", "x": 326, "y": 232, "zChangeable": true, "removable": true, "draggable": true, "rotatable": true, "resizable": true, "colors": "#000000"}' >
-          Default Text
-        </span>
+      <!-- End Main -->
 
+      <!-- Text -->
+      <span title="Any Text"
+            data-parameters='{"boundingBox": "Base", "x": 326, "y": 232, "zChangeable": true, "removable": true, "draggable": true, "rotatable": true, "resizable": true, "colors": "#000000"}' >
+        Default Text
+      </span>
+      <!-- Text -->
+
+      <!-- Thumbnail -->
       <div class="fpd-product"
            title="Shirt Back"
            data-thumbnail="/images/yellow_shirt/back/preview.png">
@@ -37,10 +44,14 @@
         <img src="/images/yellow_shirt/back/shadows.png"
              title="Shadow"
              data-parameters='{"x": 318, "y": 329}' />
+
       </div>
+      <!-- End Thumbnail -->
 
     </div>
+    <!-- End Shirt -->
 
+    <!-- Sweater -->
     <div class="fpd-product"
          title="Sweater"
          data-thumbnail="/images/sweater/preview.png">
@@ -56,7 +67,9 @@
            data-parameters='{"x": 332, "y": 309}' />
 
     </div>
+    <!-- End Sweater -->
 
+    <!-- Scoop Tee -->
     <div class="fpd-product"
          title="Scoop Tee"
          data-thumbnail="/images/scoop_tee/preview.png">
@@ -75,7 +88,9 @@
            data-parameters='{"x": 314, "y": 140}' />
 
     </div>
+    <!-- End Scop tee -->
 
+    <!-- Hoodie -->
     <div class="fpd-product"
          title="Hoodie"
          data-thumbnail="/images/hoodie/preview.png">
@@ -94,7 +109,9 @@
            data-parameters='{"x": 303, "y": 216}' />
 
     </div>
+    <!-- End Hoodie -->
 
+    <!-- Shirt -->
     <div class="fpd-product"
          title="Shirt"
          data-thumbnail="/images/shirt/preview.png">
@@ -116,7 +133,9 @@
             data-parameters='{"boundingBox": "Base", "removable": true, "draggable": true, "rotatable": true, "resizable": true, "colors": "#000000"}' >Default Text</span>
 
     </div>
+    <!-- End Shirt -->
 
+    <!-- Short -->
     <div class="fpd-product"
          title="Short"
          data-thumbnail="/images/shorts/preview.png">
@@ -138,7 +157,9 @@
            data-parameters='{"x": 320, "y": 331}' />
 
     </div>
+    <!-- End Short -->
 
+    <!-- Cap -->
     <div class="fpd-product"
          title="Basecap"
          data-thumbnail="/images/cap/preview.png">
@@ -154,7 +175,9 @@
            data-parameters='{"x": 306, "y": 299}' />
 
     </div>
+    <!-- End Cap -->
 
+    <!-- ? -->
     <div class="fpd-design">
 
       <div class="fpd-category"
@@ -212,13 +235,16 @@
       </div>
 
     </div>
+    <!-- End ? -->
 
   </div>
 
-  <br />
+  <br/>
 
+  <!-- Menu -->
   <div class="row">
 
+    <!-- Buttons -->
     <div class="api-buttons col-md-7">
 
       <a href="#"
@@ -248,7 +274,9 @@
       </a>
 
     </div>
+    <!-- End Buttons -->
 
+    <!-- Colorizable -->
     <div class="col-md-2">
 
       <a href="#"
@@ -261,17 +289,22 @@
       </label>
 
     </div>
+    <!-- End Colorizable -->
 
     <div class="col-md-3">
-        <span class="price badge badge-inverse">
-          <span id="thsirt-price"></span> $
-        </span>
+      <span class="price badge badge-inverse">
+        <span id="thsirt-price"></span> $
+      </span>
     </div>
-  </div>
 
+  </div>
+  <!-- End menu -->
+
+  <!-- Only working on a web server -->
   <h4>Only working on a webserver:</h4>
   <button class="btn btn-info" id="save-image-php">Save image with php</button>
   <button class="btn btn-info" id="send-image-mail-php">Send image to mail</button>
+  <!-- End only working on a web server -->
 
   <!-- The form recreation -->
   <input type="file" id="design-upload" style="display: none;" />

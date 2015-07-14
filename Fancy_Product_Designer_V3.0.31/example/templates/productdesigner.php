@@ -1,6 +1,4 @@
 <?php
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, POST');
 
 //main bar
 $layers_btn = isset($_POST['layersButton']) ? $_POST['layersButton'] : 'Manage Layers';
